@@ -7,10 +7,16 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Students</title>
+        <style>
+            body{
+                font-size: 20px;
+            }
+        </style>
     </head>
     <body>
         <?php
+
       include('Student.php');
       $students = array();
       
@@ -36,13 +42,24 @@ and open the template in the editor.
       $second->add_grade(50);
       $students['a456'] = $second;
       
-
+      $third = new Student();
+      $third->surname = "Zhenhua";
+      $third->first_name = "Chen";
+      $third->add_email('home','1226950749@qq.com');
+      $third->add_email('work1','A01057683@bcit.ca');
+      $third->add_email('work2','chenzhenhua1999@163.com');
+      $third->add_grade(90);
+      $third->add_grade(85);
+      $third->add_grade(80);
+      $students['d789'] = $third;
       
-
+    ksort($students); // one of the many sort functions
+      
       foreach ($students as $student) {
             echo $student->toString();
             
         }
+
         ?>
     </body>
 </html>
