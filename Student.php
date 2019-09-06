@@ -22,11 +22,11 @@ class Student {
     $this->emails[$which] = $address;
 }
 
-function add_grade($grade) {
+    function add_grade($grade) {
     $this->grades[] = $grade;
 }
 
-function average() {
+    function average() {
     $total = 0;
     foreach ($this->grades as $value)
         $total += $value;
